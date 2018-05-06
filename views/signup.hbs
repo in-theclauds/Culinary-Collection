@@ -1,24 +1,29 @@
-<h1>Welcome to Culinary Collections</h1>
-<h3>Please Create your account below</h3>
+
+<div id="home">
+    <div class="landing-text">
 
 <form action="/signup" method="POST">
-  <label>Please Choose a Username</label>
+  <label>Preferred Username: </label>
+  <br>
   <input id="username" type="text" name="username" placeholder="Enter Username Here">
   <br><br>
-  <label>Password</label>
+  <label>Password: </label>
+  <br>
+
   <input id="password" type="password" name="password" placeholder="Your password">
-<br>
-<br>
-<Br>
+
   {{#if message}}
     <div class="error-message">{{ message }}</div>
   {{/if}}
   <br><br>
 
-      <button>Create</button>
+      <button class="btn btn-default btn-sm" value="Log In">Create</button>
 
   <p class="account-message">
     Already have an account?
+    <br>
     <a href="/login">Login Instead</a>
   </p>
 </form>
+</div>
+</div>
