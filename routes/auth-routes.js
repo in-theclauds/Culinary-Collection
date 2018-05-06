@@ -24,7 +24,7 @@ authRoutes.post("/signup", (req, res, next) => {
   User.findOne({ username:username }, "username", (err, user) => {
     if (user !== null) {
       res.render("signup", { 
-        message: "Sorry, that username already exists" 
+        message: "Oops, Looks like that username already exists" 
       });
       return
     }
@@ -74,8 +74,16 @@ authRoutes.post("/login", passport.authenticate("local",
 ));
 // end post /login
 
+//google login routes
+authRoutes.get("/auth/google", passport.authenticate("google", {
+  scope: ["https://www.googleapis.com/auth/plus.login",
+          "https://www.googleapis.com/auth/plus.profile.emails.read"]
+}));
 
-
+authRoutes.get("/auth/google/callback", passport.authenticate("google", {
+  failureRedirect: "/",
+  successRedirect: "/private"
+}));
 
 
 module.exports = authRoutes;

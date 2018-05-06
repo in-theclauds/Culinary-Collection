@@ -61,7 +61,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Welcome to Culinary Collections';
 
 
 //passport config area
@@ -96,8 +96,8 @@ passport.use(new LocalStrategy({
 
 //google login config
 passport.use(new GoogleStrategy({
-  clientID: "client ID here",
-  clientSecret: "client secret here",
+  clientID: "462796486579-56ufkfhv279bospu4ne2jr1dvt218as4.apps.googleusercontent.com",
+  clientSecret: "_kpmbdhKU8TVB3RDPXtKObgy",
   callbackURL: "/auth/google/callback"
 }, (accessToken, refreshToken, profile, done) => {
   User.findOne({ googleID: profile.id }, (err, user) => {
