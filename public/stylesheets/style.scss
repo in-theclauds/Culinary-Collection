@@ -6,3 +6,25 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+.navbar {
+  margin-bottom: 2%;
+  border-radius: 27;
+  background-color:lightcoral;
+  color: darkblue;
+  padding: 1% 0;
+  font-size:1.2em;
+  border:0;
+}
+
+.navbar-logo {
+  float: left;
+  min-height: 50px;
+  padding:0 1 5;
+}
+
+.navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
+  background-color:lightcoral;
+  color: darkblue;
+}
