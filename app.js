@@ -126,6 +126,7 @@ passport.use(new GoogleStrategy({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 const index = require('./routes/index');
 app.use('/', index);
 

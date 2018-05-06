@@ -4,10 +4,12 @@ const passport    = require("passport");
 const User        = require("../models/user");
 const flash       = require("connect-flash");
 const ensureLogin = require("connect-ensure-login");
-
+const bcrypt         = require("bcrypt");
+const bcryptSalt = 10;
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("signup");
+  next();
 });
 
 authRoutes.post("/signup", (req, res, next) => {
@@ -30,7 +32,7 @@ authRoutes.post("/signup", (req, res, next) => {
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
       
-    User.create({username:username, password:hashPass, role: role })
+    User.create({username:username, password:hashPass})
     .then((theUser) => {
       res.redirect('/')
     })
@@ -59,11 +61,9 @@ authRoutes.post("/signup", (req, res, next) => {
 authRoutes.get("/login", (req, res, next) => {
   res.render("login", { "message": req.flash("error") });
 }); 
-
 //end get login
 
 //post login route
-
 authRoutes.post("/login", passport.authenticate("local",
 {
   successRedirect: "/",
@@ -72,7 +72,6 @@ authRoutes.post("/login", passport.authenticate("local",
   passReqToCallback: true
 }
 ));
-
 // end post /login
 
 

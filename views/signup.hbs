@@ -1,8 +1,9 @@
-<h1>Welcome, to Culinary Collections</h1>
+<h1>Welcome to Culinary Collections</h1>
+<h3>Please Create your account below</h3>
 
 <form action="/signup" method="POST">
   <label>Please Choose a Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
+  <input id="username" type="text" name="username" placeholder="Enter Username Here">
   <br><br>
   <label>Password</label>
   <input id="password" type="password" name="password" placeholder="Your password">
@@ -14,10 +15,10 @@
   {{/if}}
   <br><br>
 
-      <button>Create account</button>
+      <button>Create</button>
 
   <p class="account-message">
-    Do you already have an account?
-    <a href="/login">Login</a>
+    Already have an account?
+    <a href="/login">Login Instead</a>
   </p>
 </form>
