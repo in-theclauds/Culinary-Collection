@@ -7,22 +7,39 @@
 //   color: #00B7FF;
 // }
 
+#home, {
+  background: url('../images/todd-quackenbush-700-unsplash copy.jpg') no-repeat center fixed;
+  -webkit-background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  display: table;
+  position: relative;
+  height:100%;
+  width:100%;
+  background-size: cover;
+}
+
 html, body {
   height: 100%;
   width: 100%;
   margin: 20;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: 14px;
+  font-family:'Raleway', sans-serif;
   // padding: 60px;
   // padding-left: 20px;
 }
 
 
 .navbar {
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   border-radius: 27;
   background: #446975;
   color: lightgray;
-  padding: 1% 0;
+  padding: 0;
   font-size:1em;
   border:0;
 }
@@ -39,23 +56,8 @@ html, body {
 
 .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a.active {
   color: bisque;
+  border-radius: 27;
   
-}
-
-#home, {
-  background: url('../images/todd-quackenbush-700-unsplash.jpg') no-repeat center fixed;
-  -webkit-background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  display: table;
-  position: relative;
-  height:100%;
-  width:100%;
-  background-size: cover;
 }
 
 .landing-text {
@@ -64,7 +66,7 @@ html, body {
   vertical-align: middle;
   width: 100%;
   height: 100;
-  color: bisque;
+  color: #b7763e;
 }
 
 .landing-text, h1 {
@@ -73,7 +75,116 @@ html, body {
 }
 
 
+// ------------start sign in modal --------//
+.login-form {
+  width: 340px;
+    margin: 30px auto;
+}
+  .login-form form {
+    margin-bottom: 15px;
+      background: lightgrey;
+      opacity: 0.9;
+      filter: alpha(opacity=100);
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+  }
+  .login-form h2 {
+      margin: 0 0 15px;
+  }
+  .login-form .hint-text {
+  color: #777;
+  padding-bottom: 15px;
+  text-align: center;
+  }
+  .form-control, .btn {
+      min-height: 38px;
+      border-radius: 2px;
+  }
+  .login-btn {        
+      font-size: 15px;
+      font-weight: bold;
+  }
+  .or-seperator {
+      margin: 20px 0 10px;
+      text-align: center;
+      border-top: 1px solid #ccc;
+  }
+  .or-seperator i {
+      padding: 0 10px;
+      background: lightgrey;
+      position: relative;
+      top: -11px;
+      z-index: 1;
+  }
+  .social-btn .btn {
+      margin: 10px 0;
+      font-size: 15px;
+      text-align: left; 
+      line-height: 24px;       
+  }
+.social-btn .btn i {
+  float: left;
+  margin: 4px 15px  0 5px;
+      min-width: 15px;
+}
+.input-group-addon .fa{
+  font-size: 18px;
+      }.login-form {
+        width: 340px;
+          margin: 30px auto;
+      }
+        .login-form form {
+          margin-bottom: 15px;
+            background: lightgrey;
+            opacity: 0.9;
+            filter: alpha(opacity=100);
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+        .login-form .hint-text {
+        color: #777;
+        padding-bottom: 15px;
+        text-align: center;
+        }
+        .form-control, .btn {
+            min-height: 38px;
+            border-radius: 2px;
+        }
+        .login-btn {        
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .or-seperator {
+            margin: 20px 0 10px;
+            text-align: center;
+            border-top: 1px solid #ccc;
+        }
+        .or-seperator i {
+            padding: 0 10px;
+            background: lightgrey;
+            position: relative;
+            top: -11px;
+            z-index: 1;
+        }
+        .social-btn .btn {
+            margin: 10px 0;
+            font-size: 15px;
+            text-align: left; 
+            line-height: 24px;       
+        }
+      .social-btn .btn i {
+        float: left;
+        margin: 4px 15px  0 5px;
+            min-width: 15px;
+      }
+      .input-group-addon .fa{
+        font-size: 18px;
+      }
 
+// -------end modal----////
 
 
 @media (max-width: 768px) {

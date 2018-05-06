@@ -74,6 +74,15 @@ authRoutes.post("/login", passport.authenticate("local",
 ));
 // end post /login
 
+
+//homepage get
+authRoutes.get("/user-profile", (req, res, next) => {
+  res.render("user-profile");
+  next();
+});
+
+// end homepage get
+
 //google login routes
 authRoutes.get("/auth/google", passport.authenticate("google", {
   scope: ["https://www.googleapis.com/auth/plus.login",

@@ -3,7 +3,42 @@
 <div id="home">
     <div class="landing-text">
         <h1>{{title}}</h1>
-          <h3>Login to submit a recipe</h3>
+
+        <div class="login-form">
+    <form action="/user-profile" method="post">	
+        <div class="text-center social-btn">
+			<a href="/auth/google" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
+        </div>
+		<div class="or-seperator"><i>or</i></div>
+        <div class="form-group">
+        	<div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            </div>
+        </div>        
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block login-btn">Sign in</button>
+
+            {{#if message}}
+          <div class="error-message">{{ message }}</div>
+          {{/if}}
+          
+        </div>
+        <div class="clearfix">
+            <a href="#" class="center text-success">Forgot Password?</a>
+            <br>
+            <div class="hint-text small">Don't have an account? <a href="/signup" class="text-success">Register Now!</a></div>
+        </div>  
+        
+    </form>
+</div>
+          {{!-- <h3>Login to submit a recipe</h3>
           <form action="/login" method="POST">
         <div>
           <label for="username">Username:</label>
@@ -36,7 +71,7 @@
         </div>
         </div>
        </div>
-</div>
+</div> --}}
 
 
 
