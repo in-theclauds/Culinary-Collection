@@ -7,7 +7,6 @@ const ensureLogin = require("connect-ensure-login");
 
 
 authRoutes.get("/signup", (req, res, next) => {
-  console.log("hello world")
   res.render("signup");
 });
 
@@ -55,8 +54,26 @@ authRoutes.post("/signup", (req, res, next) => {
   });
 });
 
+//get login
 
+authRoutes.get("/login", (req, res, next) => {
+  res.render("login", { "message": req.flash("error") });
+}); 
 
+//end get login
+
+//post login route
+
+authRoutes.post("/login", passport.authenticate("local",
+{
+  successRedirect: "/",
+  failureRedirect: "/login",
+  failureFlash: false,
+  passReqToCallback: true
+}
+));
+
+// end post /login
 
 
 
