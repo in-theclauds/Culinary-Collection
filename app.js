@@ -9,7 +9,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const User           = require('./models/user');
-const Room           = require('./models/courses');
+// const Room           = require('./models/courses');
 const session        = require("express-session");
 const bcrypt         = require("bcrypt");
 const passport       = require("passport");
@@ -31,7 +31,6 @@ mongoose
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
-const app = express();
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -129,6 +128,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 const index = require('./routes/index');
 app.use('/', index);
+
+const theFile = require('./routes/auth-routes');
+app.use('/', theFile);
 
 
 module.exports = app;
