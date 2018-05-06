@@ -1,26 +1,57 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
-a {
-  color: #00B7FF; }
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 20; }
 
 .navbar {
   margin-bottom: 2%;
   border-radius: 27;
-  background-color: lightcoral;
-  color: darkblue;
+  background: #446975;
+  color: lightgray;
   padding: 1% 0;
-  font-size: 1.2em;
+  font-size: 1em;
   border: 0; }
 
 .navbar-logo {
   float: left;
-  min-height: 50px;
-  padding: 0 1 5; }
+  min-height: 55px;
+  padding-left: 2%; }
 
-.navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
-  background-color: lightcoral;
-  color: darkblue; }
+.navbar-default .navbar-nav li a {
+  color: lightgray; }
+
+.navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a.active {
+  color: bisque; }
+
+#home {
+  background: url("../images/todd-quackenbush-700-unsplash.jpg") no-repeat center fixed;
+  -webkit-background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  display: table;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-size: cover; }
+
+.landing-text {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100;
+  color: bisque; }
+
+.landing-text, h1 {
+  font-size: 5m;
+  font-weight: 700; }
+
+@media (max-width: 768px) {
+  .landing-text h1 {
+    font-size: 3m; } }
 
 /*# sourceMappingURL=style.css.map */
