@@ -5,7 +5,7 @@
         <h1>{{title}}</h1>
 
         <div class="login-form">
-    <form action="/user-profile" method="post">	
+    <form action="/user-login" method="post">	
         <div class="text-center social-btn">
 			<a href="/auth/google" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
         </div>
@@ -25,14 +25,14 @@
         <div class="form-group">
             <button type="submit" class="btn btn-success btn-block login-btn">Sign in</button>
 
-            {{#if message}}
+            {{!-- {{#if message}}
           <div class="error-message">{{ message }}</div>
-          {{/if}}
+          {{/if}} --}}
           
         </div>
         <div class="clearfix">
-            <a href="#" class="center text-success">Forgot Password?</a>
-            <br>
+            {{!-- <a href="#" class="center text-success">Forgot Password?</a>
+            <br> --}}
             <div class="hint-text small">Don't have an account? <a href="/signup" class="text-success">Register Now!</a></div>
         </div>  
         

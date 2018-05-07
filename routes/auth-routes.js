@@ -59,15 +59,15 @@ authRoutes.post("/signup", (req, res, next) => {
 //get login
 
 authRoutes.get("/login", (req, res, next) => {
-  res.render("login", { "message": req.flash("error") });
+  res.redirect("/", { "message": req.flash("error") });
 }); 
 //end get login
 
 //post login route
-authRoutes.post("/login", passport.authenticate("local",
+authRoutes.post("/user-login", passport.authenticate("local",
 {
-  successRedirect: "/",
-  failureRedirect: "/login",
+  successRedirect: "/user-profile",
+  failureRedirect: "/",
   failureFlash: false,
   passReqToCallback: true
 }
@@ -75,11 +75,17 @@ authRoutes.post("/login", passport.authenticate("local",
 // end post /login
 
 
-//homepage get
-authRoutes.get("/user-profile", (req, res, next) => {
-  res.render("user-profile");
+authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  res.render("user-profile", { user: req.user });
   next();
 });
+
+
+authRoutes.get("/submit-recipe", ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  res.render("submitRecipe", { user: req.user });
+  // next();
+});
+
 
 // end homepage get
 
@@ -91,8 +97,13 @@ authRoutes.get("/auth/google", passport.authenticate("google", {
 
 authRoutes.get("/auth/google/callback", passport.authenticate("google", {
   failureRedirect: "/",
-  successRedirect: "/private"
+  successRedirect: "/user-profile"
 }));
 
+
+authRoutes.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
 
 module.exports = authRoutes;

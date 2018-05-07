@@ -1,0 +1,78 @@
+
+{{#if user}}
+  <div>
+    <a href="/">Index</a>
+    <a href="/logout">Logout</a>
+  </div>
+{{/if}}
+
+
+
+<div id="submit-recipe">
+    <div class="landing-text">
+        <h1>Submit a recipe</h1>
+
+        <div class="submit-form">
+    <form action="/user-login" method="post">	
+        <div class="text-center social-btn">
+			
+        </div>
+        <div class="frm-group">
+        	<div class="inputs">
+                 <label for="recipe-name">Name: </label>
+                <input type="text" class="submit-control">
+        </div>   
+        <br>
+        <div class="frm-group">
+        	<div class="inputs">
+                <label for="ingredients">Ingredients: </label>
+                <input type="text" class="submit-control">
+            </div>
+            <br>
+            <div class="frm-group">
+        	<div class="inputs">
+                <label for="cuisine">Cuisine:</label>
+                <input type="text" class="submit-control">
+            </div>
+            <br>
+            <div class="frm-group">
+        	<div class="inputs">
+                <label for="recipe-name">Duration: </label>
+                <input type="text" class="submit-control">
+            </div>
+            <br>
+            <div class="frm-group">
+            <div class="inputs">
+              <label for="recipe-level">Level: </label>
+              <select id=“level” name=“level”>
+                    <option value=“Easy-Peasy”>Easy Peasy</option>
+                    <option value=“Amateur-Chef”>Amateur Chef</option>
+                    <option value=“Pro-Chef”>Pro Chef</option>
+                  </select>
+            </div>
+        </div>     
+        <br>
+            <div class="frm-group">
+        	<div class="inputs">
+                <label for="dishType">Dishtype: </label>
+                  <select id=“dishType” name=“dishType”>
+                    <option value=“Breakfast”>Breakfast</option>
+                    <option value=“Snack”>Snack</option>
+                    <option value=“Drink”>Drink</option>
+                    <option value=“Dessert”>Dessert</option>
+                    <option value=“Other”>Other</option>
+                  </select>
+            </div>
+        </div>
+        <br>
+        <br>
+
+            <div class="frm-group">
+            <button type="submit" class="btn btn-success center-block submit-btn">Submit</button>
+        <div class="clearfix">
+            {{!-- <a href="#" class="center text-success">Forgot Password?</a>
+            <br> --}}
+            {{!-- <div class="hint-text small">Don't have an account? <a href="/signup" class="text-success">Register Now!</a></div> --}}
+        </div>  
+        
+    </form>
