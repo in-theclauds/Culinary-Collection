@@ -10,7 +10,6 @@ const Recipe      = require('../models/recipes');
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("signup");
-  next();
 });
 
 authRoutes.post("/signup", (req, res, next) => {
@@ -40,20 +39,6 @@ authRoutes.post("/signup", (req, res, next) => {
     .catch((err)=>{
       console.log(err);
     })
-
-
-    const newUser = new User({
-      username:username,
-      password: hashPass
-    });
-
-    newUser.save((err) => {
-      if (err) {
-        res.render("signup", { message: "Something went wrong" });
-      } else {
-        res.redirect("/");
-      }
-    });
   });
 });
 
@@ -75,7 +60,7 @@ authRoutes.post("/user-login", passport.authenticate("local",
 ));
 // end post /login
 
-//user profile
+//user profile GETTING AN ERROR
 authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   res.render("user-profile", { user: req.user });
   next();
@@ -95,6 +80,7 @@ authRoutes.post('/post/submit-recipe', (req, res, next) =>{
     duration: req.body.theDuration,
     level: req.body.level,
     dishType: req.body.dishType,
+    instructions: req.body.theInstructions
   })
   .then((theRecipe) => {
     // res.json(theRecipe);
