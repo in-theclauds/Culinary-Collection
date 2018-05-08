@@ -15,61 +15,29 @@ blah
 {{!-- //need for each loop that prints each theRecipe
 // work on recipes API once routes are functioning --}}
 
-<div class="container-fluid recipe-contain">
+<div class="container-fluid">
   {{#each recipes}}
-  <div class="row">
-    <div class="col-sm-3">
+  {{!-- <div class="recipeList"> --}}
+    <div class="recipeCol">
      <h2>{{this.title}}</h2>
-     <br>
+     
      <h4>{{this.dishType}}</h4>
-     <br>
+     
      <h4>{{this.cuisine}}</h4>
-     <br>
+     
      <h4>{{this.level}}</h4>
-      <br>
+     
      <h4>{{this.duration}}</h4>
-     <br>
+     
      <ul>
-     <li>{{this.ingredients}}</li>
+       {{#each this.ingredients}}
+     <li>{{this}}</li>
+     {{/each}}
      </ul>
-     <br>
+     
      <p>{{this.instructions}}</p>
     </div>
-    <div class="col-sm-3">
-       <h2>{{this.title}}</h2>
-     <br>
-     <h4>{{this.dishType}}</h4>
-     <br>
-     <h4>{{this.cuisine}}</h4>
-     <br>
-     <h4>{{this.level}}</h4>
-      <br>
-     <h4>{{this.duration}}</h4>
-     <br>
-     <ul>
-     <li>{{this.ingredients}}</li>
-     </ul>
-     <br>
-     <p>{{this.instructions}}</p>
-    </div>
-    <div class="col-sm-3">
-       <h2>{{this.title}}</h2>
-     <br>
-     <h4>{{this.dishType}}</h4>
-     <br>
-     <h4>{{this.cuisine}}</h4>
-     <br>
-     <h4>{{this.level}}</h4>
-      <br>
-     <h4>{{this.duration}}</h4>
-     <br>
-     <ul>
-     <li>{{this.ingredients}}</li>
-     </ul>
-     <br>
-     <p>{{this.instructions}}</p>
-    </div>
-  </div>
+    
   {{/each}}
-</div>
+{{!-- </div> --}}
 </div>

@@ -45,7 +45,7 @@ authRoutes.post("/signup", (req, res, next) => {
 //get login
 
 authRoutes.get("/login", (req, res, next) => {
-  res.redirect("/", { "message": req.flash("error") });
+  res.redirect("/");
 }); 
 //end get login
 

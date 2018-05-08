@@ -6,17 +6,27 @@
   background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  display: table;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   position: relative;
-  height: 100%;
+  height: 100vh;
   width: 100%; }
 
 html, body {
-  height: 100%;
-  width: 100%;
   margin: 20;
   font-weight: 14px;
   font-family: 'Raleway', sans-serif; }
+
+.recipeCol, h2 {
+  font-size: 3vh; }
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px; }
 
 .navbar {
   margin-bottom: 1%;
@@ -251,8 +261,33 @@ label {
   font-size: 18px;
   color: black; }
 
-.recipe-contain {
-  width: 100%; }
+.container-fluid {
+  width: 100%;
+  padding: 0 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around; }
+
+.recipeList {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; }
+
+.recipeCol {
+  width: 24%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2vh;
+  padding: 0 5px; }
+
+.centerStuff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
 
 @media (max-width: 768px) {
   .landing-text h1 {
