@@ -81,7 +81,7 @@ authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) =
   next();
 });
 
-//subtmit a recipe
+//submit a recipe _____needs to redirect to page with all recipes
 authRoutes.get("/submit-recipe", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   res.render("submitRecipe", { user: req.user });
   // next();
