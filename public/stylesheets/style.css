@@ -186,7 +186,7 @@ html, body {
   -o-background-size: cover;
   display: table;
   position: relative;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   color: black; }

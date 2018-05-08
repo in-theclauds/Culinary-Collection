@@ -69,12 +69,13 @@ authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) =
 //submit a recipe _____needs to redirect to page with all recipes
 authRoutes.get("/submit-recipe", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   res.render("submitRecipe", { user: req.user });
+  // res.redirect("/recipes" , { user: req.user });
   // next();
 });
 
 authRoutes.post('/post/submit-recipe', (req, res, next) =>{
   Recipe.create({
-    recipeName: req.body.theName,
+    title: req.body.theTitle,
     ingredients: req.body.theIngredient,
     cuisine: req.body.theCuisine,
     duration: req.body.theDuration,
@@ -106,6 +107,76 @@ Recipe.find()
   })
 
 });
+
+
+// EDIT - GET ROUTE
+authRoutes.get('/recipes/edit/:id', (req, res, next) => {
+  const recipeID = req.params.id;
+
+  // console.log(celebId);
+  Recipe.findById(recipeID)
+  .then(recipeFromDB => {
+      res.render("recipes/edit-view", { recipeDetails: recipeFromDB })
+
+  })
+  
+  // res.render("recipes/edit-view")
+})
+
+//edit recipe POST route
+authRoutes.post('/recipes/update/:id', (req, res, next) => {
+  const recipeID = req.params.id;
+  const editedTitle = req.body.editedTitle;
+  const editedIngredient = req.body.editedIngredient;
+  const editedCuisine = req.body.editedCuisine;
+  const editedDuration = req.body.editedDuration;
+  const editedLevel  = req.body.editedLevel;
+  const editedDishType   = req.body.editedDishType;
+  const editedInstructions = req.body.editedInstructions;
+  // console.log("editedName: ", editedName)
+  Recipe.findByIdAndUpdate(recipeID, {
+      title: editedTitle,
+      ingredients: editedIngredient,
+      cuisine: editedCuisine,
+      duration: editedDuration,
+      level: editedLevel,
+      dishType: editedDishType,
+      instructions: editedInstructions
+  })
+  .then(() => {
+      res.redirect('/recipes')
+
+  })
+  .catch( error => {
+      console.log("Error while updating: ", error)
+  })
+})
+
+
+
+
+// search not working properly
+// authRoutes.get('/search', (req, res, next) => {
+//   const searchTerm = req.query.celebSearchTerm;
+//   if(!searchTerm){
+//       res.render('./recipes/no-search-view.hbs');
+//         return;
+//   }
+//   const searchRegex = new RegExp(searchTerm, 'i');
+//   Celebrity.find(
+//       // {'name': searchRegex},
+//       { $or:[ {'title':searchRegex}, {'ingredient':searchRegex}]},
+//       (err, searchResults)=>{
+//       if(err){
+//           next(err);
+//           return;
+//       }
+//       res.render('./recipes/search-result-view.hbs',{
+//       results: searchResults
+//     });
+//   }
+// );
+// })
 
 
 
