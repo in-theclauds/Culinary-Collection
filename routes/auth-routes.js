@@ -90,15 +90,15 @@ authRoutes.post('/post/submit-recipe', (req, res, next) =>{
   .catch((err)=>{
     console.log(err);
       next(err);
-  })
+  })  
 })// end post characters/create route
 
 //All recipes
 authRoutes.get("/recipes", ensureLogin.ensureLoggedIn(), (req, res, next) => {
-  res.render("recipes", { recipe: req.recipe });
-  find()
+Recipe.find()
   .then((recipes) => {
-    res.json(recipes);
+    res.render("recipes", { recipes: recipes});
+    // res.json(recipes);
   })
   .catch((err)=>{
     console.log(err);

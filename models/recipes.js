@@ -34,6 +34,8 @@ const recipeSchema = new Schema({
     type: Date,
     default: Date.now()
   },
+  
+  instructions: String,
 
 });
 
