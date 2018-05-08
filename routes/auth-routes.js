@@ -6,6 +6,7 @@ const flash       = require("connect-flash");
 const ensureLogin = require("connect-ensure-login");
 const bcrypt         = require("bcrypt");
 const bcryptSalt = 10;
+const Recipe      = require('../models/recipes');
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("signup");
@@ -74,17 +75,53 @@ authRoutes.post("/user-login", passport.authenticate("local",
 ));
 // end post /login
 
-
+//user profile
 authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   res.render("user-profile", { user: req.user });
   next();
 });
 
-
+//subtmit a recipe
 authRoutes.get("/submit-recipe", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   res.render("submitRecipe", { user: req.user });
   // next();
 });
+
+authRoutes.post('/post/submit-recipe', (req, res, next) =>{
+  Recipe.create({
+    recipeName: req.body.theName,
+    ingredients: req.body.theIngredient,
+    cuisine: req.body.theCuisine,
+    duration: req.body.theDuration,
+    level: req.body.level,
+    dishType: req.body.dishType,
+  })
+  .then((theRecipe) => {
+    // res.json(theRecipe);
+    console.log(theRecipe);
+    res.render('recipes', theRecipe);
+  })
+  .catch((err)=>{
+    console.log(err);
+      next(err);
+  })
+})// end post characters/create route
+
+//All recipes
+authRoutes.get("/recipes", ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  res.render("recipes", { recipe: req.recipe });
+  find()
+  .then((recipes) => {
+    res.json(recipes);
+  })
+  .catch((err)=>{
+    console.log(err);
+      next(err);
+  })
+
+});
+
+
 
 
 // end homepage get

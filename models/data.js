@@ -1,4 +1,19 @@
-module.exports =  
+const express      = require('express');
+const mongoose = require('mongoose');
+const Schema   = mongoose.Schema;
+const Recipe   = require('./recipes')
+
+mongoose.Promise = Promise;
+mongoose
+  .connect('mongodb://localhost/culinary-collection', {useMongoClient: true})
+  .then(() => {
+    console.log('Connected to Mongo!')
+  }).catch(err => {
+    console.error('Error connecting to mongo', err)
+  });
+
+
+const data =  
     [
       { 
         title: 'Asian Glazed Chicken Thighs',
@@ -51,3 +66,25 @@ module.exports =
         creator: 'Chef Jennifer'
       }
     ]
+
+    // Recipe.create ({ 
+    //   title: "Sweet Mashed Potoes", 
+    //   level: 'Easy Peasy',
+    //   ingredients: ["Sweet Potatoes" , "Butter", "salt & Pepper", "Cream"] , 
+    //   image: 'https://sweetpeaskitchen.files.wordpress.com/2010/08/maple-mashed-sweet-potatoes.jpg', 
+    //   cuisine: "American", 
+    //   duration: 30 , 
+    //   dishType: "Other",
+    //   creator: "Martha Stewart",
+    // })
+    // .then((recipe)=> {
+    //   console.log("recipe created", recipe)
+    // })
+    // .catch((error)=> {
+    //   console.log(error)
+    // });
+
+
+Recipe.insertMany(data);
+
+

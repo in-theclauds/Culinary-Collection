@@ -13,37 +13,37 @@
         <h1>Submit a recipe</h1>
 
         <div class="submit-form">
-    <form action="/user-login" method="post">	
+    <form action="/post/submit-recipe" method="post">	
         <div class="text-center social-btn">
 			
         </div>
         <div class="frm-group">
         	<div class="inputs">
-                 <label for="recipe-name">Name: </label>
-                <input type="text" class="submit-control">
+                 <label for="recipeName">Name: </label>
+                <input id="recipeName" type="text" class="submit-control" name="theName">
         </div>   
         <br>
         <div class="frm-group">
         	<div class="inputs">
                 <label for="ingredients">Ingredients: </label>
-                <input type="text" class="submit-control">
+                <input id="ingredients" type="text" class="submit-control" name="theIngredient">
             </div>
             <br>
             <div class="frm-group">
         	<div class="inputs">
                 <label for="cuisine">Cuisine:</label>
-                <input type="text" class="submit-control">
+                <input id="cuisine" type="text" class="submit-control" name="theCuisine">
             </div>
             <br>
             <div class="frm-group">
         	<div class="inputs">
-                <label for="recipe-name">Duration: </label>
-                <input type="text" class="submit-control">
+                <label for="duration">Duration: </label>
+                <input id="duration" type="text" class="submit-control" name="theDuration">
             </div>
             <br>
             <div class="frm-group">
             <div class="inputs">
-              <label for="recipe-level">Level: </label>
+              <label for="recipeLevel">Level: </label>
               <select id=“level” name=“level”>
                     <option value=“Easy-Peasy”>Easy Peasy</option>
                     <option value=“Amateur-Chef”>Amateur Chef</option>
