@@ -87,12 +87,12 @@ authRoutes.post('/post/submit-recipe', uploadCloud.single('photo'), (req, res, n
     level: req.body.level,
     dishType: req.body.dishType,
     instructions: req.body.theInstructions,
-    imgPath: req.file.url
+    image: req.file.url
   })
   .then((theRecipe) => {
     // res.json(theRecipe);
     // console.log(theRecipe);
-    res.render('recipes', theRecipe);
+    res.redirect('/recipes')
   })
   .catch((err)=>{
     console.log(err);
