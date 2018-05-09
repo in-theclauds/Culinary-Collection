@@ -36,7 +36,7 @@ const recipeSchema = new Schema({
     default: Date.now()
   },
   
-  instructions: String,
+  instructions: [],
 
 });
 
