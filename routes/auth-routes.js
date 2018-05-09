@@ -12,6 +12,14 @@ const cloudinaryStorage   = require('multer-storage-cloudinary');
 const multer              = require('multer');
 const uploadCloud         = require('../config/cloudinary');
 
+
+//user profile GETTING AN ERROR
+authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  res.render("user-profile", { user: req.user });
+  next();
+});
+
+
 authRoutes.get("/signup", (req, res, next) => {
   res.render("signup");
 });
@@ -64,11 +72,7 @@ authRoutes.post("/user-login", passport.authenticate("local",
 ));
 // end post /login
 
-//user profile GETTING AN ERROR
-authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) => {
-  res.render("user-profile", { user: req.user });
-  next();
-});
+
 
 //submit a recipe _____needs to redirect to page with all recipes
 authRoutes.get("/submit-recipe", ensureLogin.ensureLoggedIn(), (req, res, next) => {
