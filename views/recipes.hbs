@@ -40,6 +40,11 @@
      
      <br>
      <a id="send-data-update" class="btn btn-secondary" href="recipes/edit/{{this._id}}">Edit</a>
+     <br>
+     {{!-- <form action="recipes/delete/{{this._id}}" method="POST">
+
+     </form> --}}
+     <a id="send-data-delete" class="btn btn-secondary" href="/recipes/delete/{{this._id}}">Delete</a>
     </div>
         
   {{/each}}

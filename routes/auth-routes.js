@@ -13,7 +13,7 @@ const multer              = require('multer');
 const uploadCloud         = require('../config/cloudinary');
 
 
-//user profile GETTING AN ERROR
+//user profile
 authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   res.render("user-profile", { user: req.user });
  
@@ -133,6 +133,31 @@ authRoutes.get('/recipes/edit/:id', (req, res, next) => {
   
   // res.render("recipes/edit-view")
 })
+
+
+
+// authRoutes.get('/recipes/delete/:id', (req, res, next) => {
+//   const recipeID = req.params.id;
+//   // console.log(celebId);
+//   Recipe.findById(recipeID)
+//   .then(recipeFromDB => {
+//       res.render("recipes", { recipeDetails: recipeFromDB })
+
+//   })
+// })
+
+
+// deletes recipe by ID NOT WORKING
+authRoutes.get('/recipes/delete/:id', (req, res, next) => {
+  const recipeID = req.params.id;
+  console.log(req.params)
+  Recipe.findByIdAndRemove(recipeID)
+  .then(() => {
+      res.redirect("/recipes");
+  })
+  .catch( err => console.log(err));
+})
+
 
 //edit recipe POST route
 authRoutes.post('/recipes/update/:id', (req, res, next) => {
