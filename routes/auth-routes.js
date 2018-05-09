@@ -16,7 +16,7 @@ const uploadCloud         = require('../config/cloudinary');
 //user profile GETTING AN ERROR
 authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) => {
   res.render("user-profile", { user: req.user });
-  next();
+ 
 });
 
 
