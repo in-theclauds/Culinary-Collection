@@ -85,12 +85,12 @@ authRoutes.get("/submit-recipe", ensureLogin.ensureLoggedIn(), (req, res, next) 
 authRoutes.post('/post/submit-recipe', uploadCloud.single('photo'), (req, res, next) => {
   Recipe.create({
     title: req.body.theTitle,
-    ingredients: req.body.theIngredient,
+    ingredients: req.body.theIngredient.split(","),
     cuisine: req.body.theCuisine,
     duration: req.body.theDuration,
     level: req.body.level,
     dishType: req.body.dishType,
-    instructions: req.body.theInstructions,
+    instructions: req.body.theInstructions.split(","),
     image: req.file.url
   })
   .then((theRecipe) => {

@@ -413,6 +413,10 @@ html {
 .inputs {
   color: darkslategray; }
 
+.frm-group {
+  align-content: center;
+  text-align: center; }
+
 @media (max-width: 768px) {
   .landing-text h1 {
     font-size: 3m; } }
