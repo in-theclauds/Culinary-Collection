@@ -1,12 +1,16 @@
-const express     = require("express");
-const authRoutes  = express.Router();
-const passport    = require("passport");
-const User        = require("../models/user");
-const flash       = require("connect-flash");
-const ensureLogin = require("connect-ensure-login");
-const bcrypt         = require("bcrypt");
-const bcryptSalt = 10;
-const Recipe      = require('../models/recipes');
+const express             = require("express");
+const authRoutes          = express.Router();
+const passport            = require("passport");
+const User                = require("../models/user");
+const flash               = require("connect-flash");
+const ensureLogin         = require("connect-ensure-login");
+const bcrypt              = require("bcrypt");
+const bcryptSalt          = 10;
+const Recipe              = require('../models/recipes');
+const cloudinary          = require('cloudinary');
+const cloudinaryStorage   = require('multer-storage-cloudinary');
+const multer              = require('multer');
+const uploadCloud         = require('../config/cloudinary');
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("signup");
@@ -73,7 +77,8 @@ authRoutes.get("/submit-recipe", ensureLogin.ensureLoggedIn(), (req, res, next) 
   // next();
 });
 
-authRoutes.post('/post/submit-recipe', (req, res, next) =>{
+
+authRoutes.post('/post/submit-recipe', uploadCloud.single('photo'), (req, res, next) => {
   Recipe.create({
     title: req.body.theTitle,
     ingredients: req.body.theIngredient,
@@ -81,11 +86,12 @@ authRoutes.post('/post/submit-recipe', (req, res, next) =>{
     duration: req.body.theDuration,
     level: req.body.level,
     dishType: req.body.dishType,
-    instructions: req.body.theInstructions
+    instructions: req.body.theInstructions,
+    imgPath: req.file.url
   })
   .then((theRecipe) => {
     // res.json(theRecipe);
-    console.log(theRecipe);
+    // console.log(theRecipe);
     res.render('recipes', theRecipe);
   })
   .catch((err)=>{
@@ -93,6 +99,7 @@ authRoutes.post('/post/submit-recipe', (req, res, next) =>{
       next(err);
   })  
 })// end post characters/create route
+
 
 //All recipes
 authRoutes.get("/recipes", ensureLogin.ensureLoggedIn(), (req, res, next) => {
