@@ -147,7 +147,7 @@ authRoutes.get('/recipes/edit/:id', (req, res, next) => {
 // })
 
 
-// deletes recipe by ID NOT WORKING
+// deletes recipe
 authRoutes.get('/recipes/delete/:id', (req, res, next) => {
   const recipeID = req.params.id;
   console.log(req.params)
@@ -195,18 +195,18 @@ authRoutes.post('/recipes/update/:id', (req, res, next) => {
 authRoutes.get('/recipes/search/', (req, res, next) => {
   const searchTerm = req.query.recipeSearchTerm;
   if(!searchTerm){
-      res.render('/recipes/no-search-view.hbs');
+      res.render('recipes/no-search-view.hbs');
         return;
   }
   const searchRegex = new RegExp(searchTerm, 'i');
   Recipe.find(
-      { $or:[ {'title':searchRegex}, {'ingredient':searchRegex}]},
+      { $or:[ {'title':searchRegex}, {'ingredients':searchRegex}]},
       (err, searchResults)=>{
       if(err){
           next(err);
           return;
       }
-      res.render('/recipes/search-result-view.hbs',{
+      res.render('recipes/search-result-view.hbs',{
       results: searchResults
     });
   }
