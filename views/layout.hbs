@@ -47,14 +47,15 @@
       </div>
          
 
-          {{!-- SEARCH NOT WORKING PROPERLY --}}
-      <div class="collapse navbar-collapse" id="#navbar-collapse-main">
+          {{!-- SEARCH WORKING PROPERLY --}}
+      <div class="rightNav collapse navbar-collapse" id="#navbar-collapse-main">
             <form method="get" action="/recipes/search">
               <input type="search" name="recipeSearchTerm" placeholder="Search for a recipe...">
               <button type="submit" class="btn btn-default search-btn"><i class="glyphicon glyphicon-search"></i></button> 
             </form>
                   <ul class="nav navbar-nav navbar-right">
-                    <li class= "active"><a href="/">Home</a></li>
+                    <li class= "active"><a href="/">Login</a></li>
+                    <li class= "active"><a href="/home">Home</a></li>
                     <li><a href="/recipes">Recipes</a></li>
                     <li><a href="/submit-recipe">Submit a Recipe</a></li>
                     <li><a href="/logout">Logout</a></li>

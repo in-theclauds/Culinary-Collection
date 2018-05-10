@@ -3,6 +3,12 @@
   height: 75px;
   padding-left: 0%; }
 
+.rightNav {
+  width: 140%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center; }
+
 #home {
   background: url("../images/todd-quackenbush-700-unsplash copy.jpg") no-repeat center fixed;
   -webkit-background-size: cover;

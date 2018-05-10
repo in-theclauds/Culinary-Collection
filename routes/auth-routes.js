@@ -116,8 +116,34 @@ Recipe.find()
     console.log(err);
       next(err);
   })
-
 });
+
+// individual recipes on click
+authRoutes.get("/individual-recipes/:id", ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  Recipe.findById(req.params.id)
+    .then((recipe) => {
+      console.log(recipe);
+      res.render("recipes/individual-recipes", { recipe: recipe});
+      // res.json(recipes);
+    })
+    .catch((err)=>{
+      console.log(err);
+        next(err);
+    })
+  });
+
+
+  authRoutes.post("/individual-recipes/:id", ensureLogin.ensureLoggedIn(), (req, res, next) => {
+    Recipe.findById()
+      .then((recipe) => {
+        res.render("recipes/individual-recipes", { recipe: recipe});
+        // res.json(recipes);
+      })
+      .catch((err)=>{
+        console.log(err);
+          next(err);
+      })
+    });
 
 
 // EDIT - GET ROUTE
@@ -134,17 +160,6 @@ authRoutes.get('/recipes/edit/:id', (req, res, next) => {
   // res.render("recipes/edit-view")
 })
 
-
-
-// authRoutes.get('/recipes/delete/:id', (req, res, next) => {
-//   const recipeID = req.params.id;
-//   // console.log(celebId);
-//   Recipe.findById(recipeID)
-//   .then(recipeFromDB => {
-//       res.render("recipes", { recipeDetails: recipeFromDB })
-
-//   })
-// })
 
 
 // deletes recipe
@@ -191,7 +206,7 @@ authRoutes.post('/recipes/update/:id', (req, res, next) => {
 
 
 
-// search not working properly
+// search
 authRoutes.get('/recipes/search/', (req, res, next) => {
   const searchTerm = req.query.recipeSearchTerm;
   if(!searchTerm){

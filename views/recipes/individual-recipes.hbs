@@ -1,0 +1,60 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+{{#if user}}
+  <div>
+    <a href="/">Index</a>
+    <a href="/logout">Logout</a>
+  </div>
+{{/if}}
+
+
+<h1 class="elegantshd theRecipes">Recipes</h1>
+<div id="theRecipes" class="container-fluid">
+
+  {{!-- <div class="recipeList"> --}}
+    <div class="recipeCol">
+     <img src="{{recipe.image}}" class="recipe-images">
+     <h2>{{recipe.title}}</h2>
+     
+     <h4>{{recipe.dishType}}</h4>
+     
+     <h4>{{recipe.cuisine}}</h4>
+     
+     <h4>{{recipe.level}}</h4>
+     
+     <h4>{{recipe.duration}}
+        <i class="glyphicon glyphicon-time"></i>
+     </h4> 
+    
+     
+     <ul>
+       {{#each recipe.ingredients}}
+     <li>{{this}}</li>
+     {{/each}}
+     </ul>
+     
+     <ol>
+       {{#each recipe.instructions}}
+     <li>{{this}}</li>
+     {{/each}}
+     </ol>
+
+     
+     <br>
+     <a id="send-data-update" class="btn btn-secondary" href="recipes/edit/{{recipe._id}}">Edit</a>
+     <br>
+     {{!-- <form action="recipes/delete/{{recipe._id}}" method="POST">
+
+     </form> --}}
+     <a id="send-data-delete" class="btn btn-secondary" href="/recipes/delete/{{recipe._id}}">Delete</a>
+    </div>
+        
+ 
+{{!-- </div> --}}
+</div>
