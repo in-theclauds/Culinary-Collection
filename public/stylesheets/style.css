@@ -1,7 +1,9 @@
 .navbar-logo {
   float: left;
-  height: 75px;
   padding-left: 0%; }
+
+.navbar-logo-img {
+  height: 75px; }
 
 .rightNav {
   width: 140%;
@@ -15,8 +17,7 @@
   padding-left: 0%; }
 
 .searchy {
-  margin-top: 2.5%;
-  padding-left: 65%; }
+  margin-top: 2.5%; }
 
 #home {
   background: url("../images/todd-quackenbush-700-unsplash copy.jpg") no-repeat center fixed;

@@ -18,23 +18,23 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="nagivation">
     <div class="nav-container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" 
-          data-target="#navbar-collapse-main">
+          {{!-- <button type="button" class="navbar-toggle" data-toggle="collapse"></button> --}}
+          {{!-- data-target="#navbar-collapse-main"> --}}
           {{!-- <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span> --}}
           </button>
 
           {{!-- navbar logo/link/image --}}
-          <a href="/recipes"><img src='./images/logo.png' class="navbar-logo"></a>
-         
-            <form method="get" action="/recipes/search" class="searchy">
+        
+                {{!-- SEARCH WORKING PROPERLY --}}
+            <form method="get" action="/recipes/search" class="navbar-logo">
               <input type="search" name="recipeSearchTerm" placeholder="Search for a recipe...">
               <button type="submit" class="btn btn-default search-btn"><i class="glyphicon glyphicon-search"></i></button> 
             </form>
       </div>
 
-          {{!-- SEARCH WORKING PROPERLY --}}
+   
       <div class="rightNav collapse navbar-collapse" id="#navbar-collapse-main">
 
                 <div class="dropdown">
