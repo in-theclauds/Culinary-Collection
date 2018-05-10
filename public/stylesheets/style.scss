@@ -29,6 +29,7 @@
   float: right;
   height: 55px;
   padding-left: 0%; 
+  margin: 0 auto;
 }
 
 
@@ -527,6 +528,7 @@ html, body {
     float: right;
     height: 55px;
     padding-left: 0%; 
+    margin: 0% auto;
   }
 }
 
@@ -579,7 +581,7 @@ html, body {
 
 @media only screen and (max-width: 767px) {
   .landing-text h1{
-    font-size: 3m;
+    font-size: 3vh;
   }
 
   .navbar-nav {
@@ -596,7 +598,7 @@ html, body {
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
   .landing-text h1{
-    font-size: 3m;
+    font-size: 3vh;
   }
 
   .navbar-nav {

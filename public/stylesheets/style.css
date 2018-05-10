@@ -14,7 +14,8 @@
 .hamburger {
   float: right;
   height: 55px;
-  padding-left: 0%; }
+  padding-left: 0%;
+  margin: 0 auto; }
 
 .searchy {
   margin-top: 2.5%; }
@@ -439,7 +440,8 @@ html {
   .hamburger {
     float: right;
     height: 55px;
-    padding-left: 0%; } }
+    padding-left: 0%;
+    margin: 0% auto; } }
 
 .dropbtn {
   padding: 16px;
@@ -483,7 +485,7 @@ html {
 
 @media only screen and (max-width: 767px) {
   .landing-text h1 {
-    font-size: 3m; }
+    font-size: 3vh; }
   .navbar-nav {
     display: none; }
   .hamburger {
@@ -493,7 +495,7 @@ html {
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
   .landing-text h1 {
-    font-size: 3m; }
+    font-size: 3vh; }
   .navbar-nav {
     display: none; }
   .navLinks {
