@@ -192,27 +192,26 @@ authRoutes.post('/recipes/update/:id', (req, res, next) => {
 
 
 // search not working properly
-// authRoutes.get('/search', (req, res, next) => {
-//   const searchTerm = req.query.celebSearchTerm;
-//   if(!searchTerm){
-//       res.render('./recipes/no-search-view.hbs');
-//         return;
-//   }
-//   const searchRegex = new RegExp(searchTerm, 'i');
-//   Celebrity.find(
-//       // {'name': searchRegex},
-//       { $or:[ {'title':searchRegex}, {'ingredient':searchRegex}]},
-//       (err, searchResults)=>{
-//       if(err){
-//           next(err);
-//           return;
-//       }
-//       res.render('./recipes/search-result-view.hbs',{
-//       results: searchResults
-//     });
-//   }
-// );
-// })
+authRoutes.get('/recipes/search/', (req, res, next) => {
+  const searchTerm = req.query.recipeSearchTerm;
+  if(!searchTerm){
+      res.render('/recipes/no-search-view.hbs');
+        return;
+  }
+  const searchRegex = new RegExp(searchTerm, 'i');
+  Recipe.find(
+      { $or:[ {'title':searchRegex}, {'ingredient':searchRegex}]},
+      (err, searchResults)=>{
+      if(err){
+          next(err);
+          return;
+      }
+      res.render('/recipes/search-result-view.hbs',{
+      results: searchResults
+    });
+  }
+);
+})
 
 
 

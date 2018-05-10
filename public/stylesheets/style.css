@@ -1,3 +1,8 @@
+.navbar-logo {
+  float: left;
+  height: 75px;
+  padding-left: 0%; }
+
 #home {
   background: url("../images/todd-quackenbush-700-unsplash copy.jpg") no-repeat center fixed;
   -webkit-background-size: cover;
@@ -49,11 +54,6 @@ html, body {
 
 .navbar-header {
   width: 100%; }
-
-.navbar-logo {
-  float: left;
-  min-height: 55px;
-  padding-left: 2%; }
 
 .navbar-default .navbar-nav li a {
   color: lightgray; }
