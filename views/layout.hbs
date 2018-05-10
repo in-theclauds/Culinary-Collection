@@ -5,29 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   {{!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-    
-
-{{!-- //MARCOS NAV BAR --}}
-{{!-- <div class="dropdown">
-            <a onclick="myFunction()" class="dropbtn"> Discussions <span class="glyphicon glyphicon-chevron-down"></span> </a>
-            <div id="myDropdown" class="dropdown-content">
-              <a href="/Angular"> Angular </a>
-              <a href="/CSS"> CSS </a>
-              <a href="/Python"> Python </a>
-              <a href="/Javascript"> Javascript </a>
-              <a href="/Mongo"> Mongo </a>
-              <a href="/Node"> Node </a>
-              <a href="/Ruby"> Ruby </a>
-            </div>
-          </div> --}}
-
 
 
 {{!------bootstrap navbar --}}
@@ -36,43 +20,45 @@
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" 
           data-target="#navbar-collapse-main">
+          {{!-- <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> --}}
           </button>
 
           {{!-- navbar logo/link/image --}}
           <a href="/recipes"><img src='./images/logo.png' class="navbar-logo"></a>
-
-      </div>
          
-
-          {{!-- SEARCH WORKING PROPERLY --}}
-      <div class="rightNav collapse navbar-collapse" id="#navbar-collapse-main">
-            <form method="get" action="/recipes/search">
+            <form method="get" action="/recipes/search" class="searchy">
               <input type="search" name="recipeSearchTerm" placeholder="Search for a recipe...">
               <button type="submit" class="btn btn-default search-btn"><i class="glyphicon glyphicon-search"></i></button> 
             </form>
+      </div>
+
+          {{!-- SEARCH WORKING PROPERLY --}}
+      <div class="rightNav collapse navbar-collapse" id="#navbar-collapse-main">
+
+                <div class="dropdown">
+                  <a onclick="myFunction()" class="dropbtn"><img class="hamburger" src="../images/588a64e7d06f6719692a2d11.png"></a>
+                  <div id="myDropdown" class="dropdown-content">
+                      {{!-- <a href="/home">Home</a> --}}
+                      <a href="/recipes">Recipes</a>
+                      <a href="/submit-recipe">Submit a Recipe</a>
+                      <a href="/logout">Logout</a>
+                  </div>
+                  <div class="navLinks">
                   <ul class="nav navbar-nav navbar-right">
                     <li class= "active"><a href="/">Login</a></li>
-                    <li class= "active"><a href="/home">Home</a></li>
+                    {{!-- <li class= "active"><a href="/home">Home</a></li> --}}
                     <li><a href="/recipes">Recipes</a></li>
                     <li><a href="/submit-recipe">Submit a Recipe</a></li>
                     <li><a href="/logout">Logout</a></li>
                   </ul>
-      </div>
+
+                  </div>
+    </div>
     </div>
 </nav>
-
-
-    {{!-- <div class="navbar">
-      <span><a href="/signup">Signup</a></span>
-      <br>
-      or
-      <br>
-      
-      <span><a href="/login">Log in</a></span>
-    </div> --}}
+{{!-- // <img class="hamburger" src="../images/588a64e7d06f6719692a2d11.png"> --}}
       <br>
         {{{body}}}
 

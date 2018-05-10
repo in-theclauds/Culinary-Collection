@@ -9,6 +9,15 @@
   justify-content: center;
   align-items: center; }
 
+.hamburger {
+  float: right;
+  height: 55px;
+  padding-left: 0%; }
+
+.searchy {
+  margin-top: 2.5%;
+  padding-left: 65%; }
+
 #home {
   background: url("../images/todd-quackenbush-700-unsplash copy.jpg") no-repeat center fixed;
   -webkit-background-size: cover;
@@ -425,14 +434,70 @@ html {
 
 @media only screen and (max-width: 768px) {
   .landing-text h1 {
-    font-size: 3m; } }
+    font-size: 3m; }
+  .hamburger {
+    float: right;
+    height: 55px;
+    padding-left: 0%; } }
+
+.dropbtn {
+  padding: 16px;
+  border: none;
+  cursor: pointer; }
+
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #446975;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1; }
+
+/* Show the dropdown menu (when the user clicks on the dropdown button) */
+.show {
+  display: block; }
+
+@media screen and (min-width: 992px) {
+  .hamburger {
+    display: none; } }
+
+.submiting-btn {
+  padding-left: 33px; }
 
 @media only screen and (max-width: 767px) {
   .landing-text h1 {
-    font-size: 3m; } }
+    font-size: 3m; }
+  .navbar-nav {
+    display: none; }
+  .hamburger {
+    float: right;
+    height: 55px;
+    padding-left: 0%; } }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
   .landing-text h1 {
-    font-size: 3m; } }
+    font-size: 3m; }
+  .navbar-nav {
+    display: none; }
+  .navLinks {
+    float: right;
+    height: 55px;
+    padding-left: 0%; } }
 
 /*# sourceMappingURL=style.css.map */

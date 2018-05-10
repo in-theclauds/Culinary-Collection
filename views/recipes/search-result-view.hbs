@@ -1,10 +1,56 @@
-<br><br><br><br><br>
-<h2>Search results</h2>
-<ul>
 
 
+
+
+{{#if user}}
+  {{!-- <div>
+    <a href="/">Index</a>
+    <a href="/logout">Logout</a>
+  </div> --}}
+{{/if}}
+
+
+<h1 class="theRecipes">Search results</h1>
+<div id="theRecipes" class="container-fluid">
 {{#each results  }}
-    <li>{{ this.title }} </li>
-    <li>{{this.ingredient}} </li>
-{{/each  }}
-</ul>
+  {{!-- <div class="recipeList"> --}}
+    <div class="recipeCol">
+         <a href="/individual-recipes/{{this.id}}"> <img src="{{this.image}}" class="recipe-images"> </a>
+     <h2>{{this.title}}</h2>
+     
+     <h4>{{this.dishType}}</h4>
+     
+     <h4>{{this.cuisine}}</h4>
+     
+     <h4>{{this.level}}</h4>
+     
+     <h4>{{this.duration}}
+        <i class="glyphicon glyphicon-time"></i>
+     </h4> 
+     <br>
+        <ul>
+       {{#each this.ingredients}}
+     <li>{{this}}</li>
+     {{/each}}
+     </ul>
+     
+     <ol>
+       {{#each this.instructions}}
+     <li>{{this}}</li>
+     {{/each}}
+     </ol>
+
+     
+     <br>
+     <a id="send-data-update" class="btn btn-secondary" href="recipes/edit/{{this._id}}">Edit</a>
+     <br>
+     {{!-- <form action="recipes/delete/{{recipe._id}}" method="POST">
+
+     </form> --}}
+     <a id="send-data-delete" class="btn btn-secondary" href="/recipes/delete/{{this._id}}">Delete</a>
+    </div>
+
+{{/each}}
+ 
+{{!-- </div> --}}
+</div>

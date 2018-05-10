@@ -14,10 +14,10 @@ const uploadCloud         = require('../config/cloudinary');
 
 
 //user profile
-authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) => {
-  res.render("user-profile", { user: req.user });
+// authRoutes.get("/user-profile", ensureLogin.ensureLoggedIn(), (req, res, next) => {
+//   res.render("user-profile", { user: req.user });
  
-});
+// });
 
 
 authRoutes.get("/signup", (req, res, next) => {
@@ -64,7 +64,7 @@ authRoutes.get("/login", (req, res, next) => {
 //post login route
 authRoutes.post("/user-login", passport.authenticate("local",
 {
-  successRedirect: "/user-profile",
+  successRedirect: "/recipes",
   failureRedirect: "/",
   failureFlash: false,
   passReqToCallback: true
@@ -149,16 +149,18 @@ authRoutes.get("/individual-recipes/:id", ensureLogin.ensureLoggedIn(), (req, re
 // EDIT - GET ROUTE
 authRoutes.get('/recipes/edit/:id', (req, res, next) => {
   const recipeID = req.params.id;
-
+  
   // console.log(celebId);
   Recipe.findById(recipeID)
   .then(recipeFromDB => {
-      res.render("recipes/edit-view", { recipeDetails: recipeFromDB })
+    
+    res.render("recipes/edit-view", { recipeDetails: recipeFromDB })
 
   })
   
   // res.render("recipes/edit-view")
 })
+
 
 
 

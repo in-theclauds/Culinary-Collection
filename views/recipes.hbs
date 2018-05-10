@@ -1,15 +1,16 @@
 
 {{#if user}}
-  <div>
+  {{!-- <div>
     <a href="/">Index</a>
     <a href="/logout">Logout</a>
-  </div>
+  </div> --}}
 {{/if}}
 
 
 <h1 class="elegantshd theRecipes">Recipes</h1>
 <div id="theRecipes" class="container-fluid">
   {{#each recipes}}
+  
   {{!-- <div class="recipeList"> --}}
     <div class="recipeCol">
       <a href="/individual-recipes/{{this.id}}"> <img src="{{this.image}}" class="recipe-images"> </a>
