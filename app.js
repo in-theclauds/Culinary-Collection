@@ -95,32 +95,32 @@ passport.use(new LocalStrategy({
 }));
 
 //google login config
-passport.use(new GoogleStrategy({
-  clientID: "462796486579-56ufkfhv279bospu4ne2jr1dvt218as4.apps.googleusercontent.com",
-  clientSecret: "_kpmbdhKU8TVB3RDPXtKObgy",
-  callbackURL: "/auth/google/callback"
-}, (accessToken, refreshToken, profile, done) => {
-  User.findOne({ googleID: profile.id }, (err, user) => {
-    if (err) {
-      return done(err);
-    }
-    if (user) {
-      return done(null, user);
-    }
+// passport.use(new GoogleStrategy({
+//   clientID: "462796486579-56ufkfhv279bospu4ne2jr1dvt218as4.apps.googleusercontent.com",
+//   clientSecret: "_kpmbdhKU8TVB3RDPXtKObgy",
+//   callbackURL: "/auth/google/callback"
+// }, (accessToken, refreshToken, profile, done) => {
+//   User.findOne({ googleID: profile.id }, (err, user) => {
+//     if (err) {
+//       return done(err);
+//     }
+//     if (user) {
+//       return done(null, user);
+//     }
 
-    const newUser = new User({
-      googleID: profile.id
-    });
+//     const newUser = new User({
+//       googleID: profile.id
+//     });
 
-    newUser.save((err) => {
-      if (err) {
-        return done(err);
-      }
-      done(null, newUser);
-    });
-  });
+//     newUser.save((err) => {
+//       if (err) {
+//         return done(err);
+//       }
+//       done(null, newUser);
+//     });
+//   });
 
-}));
+// }));
 // end passport config area
 
 
