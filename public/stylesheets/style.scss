@@ -179,6 +179,7 @@ html, body {
       text-align: left; 
       line-height: 24px;       
   }
+
 .social-btn .btn i {
   float: left;
   margin: 4px 15px  0 5px;
@@ -376,12 +377,39 @@ html, body {
 
 .recipeCol {
   width: 24%;
+  height: 420px;
+  margin-bottom: 77px;
   display: flex;
   align-items: center;
   flex-direction: column;
   font-size: 2vh;
-  padding: 0 5px;
+  padding: 5px 5px;
+  padding-bottom: 5px;
+  // border-style: solid;
+  // border-color: lightslategray;
+  // border-style: inset;
+  // border-radius: 5px;
 }
+
+.singleRecipeCol {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2vh;
+  padding:5px;
+  border-style: solid;
+  border-color: lightslategray;
+  border-style: inset;
+  border-radius: 5px;
+
+}
+
+.recipe-image {
+  width: 37%;
+    border-radius: 69%;
+    height: 25em;
+}
+
 
 .centerStuff {
   display: flex;
@@ -394,6 +422,7 @@ html, body {
   width: 75%;
   border-radius: 49%;
   height: 13em;
+  padding-top: 0%;
 }
 // recipes div ends
 

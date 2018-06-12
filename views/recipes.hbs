@@ -10,29 +10,17 @@
 <h1 class="elegantshd theRecipes">Recipes</h1>
 <div id="theRecipes" class="container-fluid">
   {{#each recipes}}
-  
-  {{!-- <div class="recipeList"> --}}
     <div class="recipeCol">
       <a href="/individual-recipes/{{this.id}}"> <img src="{{this.image}}" class="recipe-images"> </a>
      <h2>{{this.title}}</h2>
-     
      <h4>{{this.dishType}}</h4>
-     
      <h4>{{this.cuisine}}</h4>
-     
      <h4>{{this.level}}</h4>
-     
      <h4>{{this.duration}}
         <i class="glyphicon glyphicon-time"></i>
      </h4> 
-     <br>
      <a id="send-data-update" class="btn btn-secondary" href="recipes/edit/{{this._id}}">Edit</a>
-     {{!-- <form action="recipes/delete/{{this._id}}" method="POST">
-
-     </form> --}}
      <a id="send-data-delete" class="btn btn-secondary" href="/recipes/delete/{{this._id}}">Delete</a>
     </div>
-        
   {{/each}}
-{{!-- </div> --}}
 </div>
