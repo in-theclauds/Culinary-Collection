@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-console.log("I AM LINKKKEEEDDDD!!!!!")
+console.log("Dom linked")
   
 
 
