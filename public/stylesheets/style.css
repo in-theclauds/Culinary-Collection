@@ -326,11 +326,7 @@ label {
   align-items: center;
   flex-direction: column;
   font-size: 2vh;
-  padding: 5px;
-  border-style: solid;
-  border-color: lightslategray;
-  border-style: inset;
-  border-radius: 5px; }
+  padding: 5px; }
 
 .recipe-image {
   width: 37%;
