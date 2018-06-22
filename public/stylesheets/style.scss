@@ -87,7 +87,7 @@ body {
   flex-flow: flex-start;
   justify-content: left;
   align-items: left;
-  margin-left: -80%;
+  margin-left: -60%;
   margin-right: 20%;
 }
 
@@ -221,6 +221,7 @@ html, body {
 
 .navbar-default .navbar-nav li a {
   color: lightgray !important;
+  margin-left: 24% !important;
 }
 
 .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a.active {
