@@ -1,8 +1,8 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <br>
-<br>
-<br>
-<br>
-<br>
+
 
 
 
@@ -14,47 +14,73 @@
 {{/if}}
 
 
-<h1 class="elegantshd theRecipes">Recipe</h1>
+<div class="theRecipes center"><h2>{{recipe.title}}</h2><br>
+                              <h4>{{recipe.duration}} <i class="glyphicon glyphicon-time">
+                              </i></h4>
+                              <h5>{{recipe.dishType}}</h5>
+                              <h6>{{recipe.level}}</h6>
+</div>
+
 <div id="theRecipes" class="container-fluid">
 
-  {{!-- <div class="recipeList"> --}}
-    <div class="singleRecipeCol">
-     <img src="{{recipe.image}}" class="recipe-image">
-     <h2>{{recipe.title}}</h2>
+  <div class="container singleRecipeCol">
+      <div class="product">
+        <div class="product-photo">
+          <img src="{{recipe.image}}" class="recipe-image">
+        </div>
+        <div class="product-detail">
+          
+          {{!-- <div class="product__price">{{recipe.dishType}}</div> --}}
+          {{!-- <div class="product__price">{{recipe.cuisine}}</div> --}}
+          {{!-- <div class="product__price"></div> --}}
+          {{!-- <div class="product__price"> --}}
+          <div class="product__subtitle"><h4>Ingredients</h4>
+                                          <ul>
+                                          {{#each recipe.ingredients}}
+                                          <li>{{this}}</li>
+                                          {{/each}}
+                                          </ul></div>
+
+            <div class="center product__subtitle theDescription">
+ 
+                                        <ol>
+                                        {{#each recipe.instructions}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                        </ol>
+        </div>
+      </div>
+    </div>
+
+    {{!-- <div class="singleRecipeCol"> --}}
+     {{!-- <img src="{{recipe.image}}" class="recipe-image"> --}}
+     {{!-- <h2>{{recipe.title}}</h2> --}}
      
-     <h4>{{recipe.dishType}}</h4>
+     {{!-- <h4>{{recipe.dishType}}</h4> --}}
      
-     <h4>{{recipe.cuisine}}</h4>
+     {{!-- <h4>{{recipe.cuisine}}</h4> --}}
      
-     <h4>{{recipe.level}}</h4>
+     {{!-- <h4>{{recipe.level}}</h4> --}}
      
-     <h4>{{recipe.duration}}
+     {{!-- <h4>{{recipe.duration}}
         <i class="glyphicon glyphicon-time"></i>
-     </h4> 
+     </h4>  --}}
     
      
-     <ul>
+     {{!-- <ul>
        {{#each recipe.ingredients}}
      <li>{{this}}</li>
      {{/each}}
-     </ul>
+     </ul> --}}
      
-     <ol>
+     {{!-- <ol>
        {{#each recipe.instructions}}
      <li>{{this}}</li>
      {{/each}}
-     </ol>
+     </ol> --}}
 
      
      <br>
-     {{!-- <a id="send-data-update" class="btn btn-secondary" href="recipes/edit/{{recipe._id}}">Edit</a>
-     <br>
-     {{!-- <form action="recipes/delete/{{recipe._id}}" method="POST">
 
-     </form> --}}
-     {{!-- <a id="send-data-delete" class="btn btn-secondary" href="/recipes/delete/{{recipe._id}}">Delete</a>
-    </div> --}}
-        
- 
-{{!-- </div> --}}
+    {{!-- </div> --}}
 </div>
