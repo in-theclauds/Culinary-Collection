@@ -75,8 +75,9 @@ body {
   flex-flow: flex-start;
   justify-content: left;
   align-items: left;
-  margin-left: -80%;
-  margin-right: 20%; }
+  margin-left: -65%;
+  margin-right: 20%; 
+}
 
 .product-detail {
   display: flex;
@@ -183,11 +184,13 @@ html, body {
   width: 100% !important; }
 
 .navbar-default .navbar-nav li a {
-  color: lightgray !important; }
+  color: lightgray !important;
+  margin-left: 24% }
 
 .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a.active {
   color: bisque !important;
-  border-radius: 27 !important; }
+  border-radius: 27 !important; 
+  margin-left: 24%}
 
 .landing-text {
   display: table-cell;
