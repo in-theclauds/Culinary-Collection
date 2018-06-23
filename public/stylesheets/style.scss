@@ -120,12 +120,23 @@ body {
   letter-spacing: 2px;
   font-family: 'Oswald', sans-serif;  margin-bottom: 2rem;
 }
-.product__subtitle, ul {
-  /* margin-top: -4%; */
-  font-family: 'Oswald', sans-serif;  font-weight: 300;
+
+.theIngredient > h4, ul{
+font-family: 'Oswald', sans-serif;
+    margin-bottom: 2rem;
+    font-size: 25px;
+    margin-left: -36%;
+}
+
+
+
+.product__subtitle > ul , ul{
+  font-family: 'Montserrat', sans-serif;  
   font-size: 1.5rem;
   color: darkslategrey;
   margin-bottom: 2rem;
+  margin-left: -17%;
+  margin-top: -33%;
   /* margin-top: 46px; */
   /* padding: 0 4rem; */
 }

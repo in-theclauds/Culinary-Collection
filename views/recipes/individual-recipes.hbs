@@ -18,8 +18,8 @@
 
 
 <div class="theRecipes center"><h2>{{recipe.title}}</h2><br>
-                              <h4>{{recipe.duration}} <i class="glyphicon glyphicon-time">
-                              </i></h4>
+                              <h5>{{recipe.duration}} <i class="glyphicon glyphicon-time">
+                              </i></h5>
                               <h5>{{recipe.dishType}}</h5>
                               <h6>{{recipe.level}}</h6>
 </div>
@@ -37,7 +37,7 @@
           {{!-- <div class="product__price">{{recipe.cuisine}}</div> --}}
           {{!-- <div class="product__price"></div> --}}
           {{!-- <div class="product__price"> --}}
-          <div class="product__subtitle"><h4><u>Ingredients</u></h4>
+          <div class="product__subtitle"><h4 class="theIngredient"><u>Ingredients</u></h4>
                                           <ul>
                                             <li>
                                           {{#each recipe.ingredients}}
