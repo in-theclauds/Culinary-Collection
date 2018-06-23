@@ -37,14 +37,15 @@
           {{!-- <div class="product__price">{{recipe.cuisine}}</div> --}}
           {{!-- <div class="product__price"></div> --}}
           {{!-- <div class="product__price"> --}}
-          <div class="product__subtitle"><h4 class="theIngredient"><u>Ingredients</u></h4>
-                                          <ul>
-                                            <li>
-                                          {{#each recipe.ingredients}}
-                                          {{this}}
-                                          {{/each}}
-                                          </li>
-                                          </ul></div>
+          <div class="product__subtitle">
+            <ul>
+              <li>
+                {{#each recipe.ingredients}}
+                 {{this}}
+                  {{/each}}
+                 </li>
+                 </ul>
+              </div>
 
             <div class="center theProduct__subtitle theDescription">
  
