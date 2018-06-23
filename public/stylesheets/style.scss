@@ -154,10 +154,13 @@ font-family: 'Oswald', sans-serif;
 
 .navText{
   font-family: 'Oswald', sans-serif;
-  a:hover {
-    opacity: 0.5, lightslategrey;
 
 }
+
+.navText:hover{
+  font-family: 'Oswald', sans-serif;
+    opacity: 0.5, lightslategrey;
+
 }
 
 .rightNav {
@@ -255,7 +258,7 @@ html, body {
 }
 
 .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a.active {
-  color: bisque !important;
+  // color: bisque !important;
   border-radius: 27 !important;
   
 }
