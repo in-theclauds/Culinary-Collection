@@ -14,9 +14,9 @@
 {{/if}}
 
 
-<h1 class="theRecipes"></h1>
+
 <div id="theRecipes" class="container-fluid">
-  {{#each recipes}}
+  {{#each results  }}
     <div class="recipeCol">
       <a href="/individual-recipes/{{this.id}}"> <img src="{{this.image}}" class="recipe-images"> </a>
      <h2>{{this.title}}</h2>
@@ -26,8 +26,6 @@
      <h4>{{this.duration}}
         <i class="glyphicon glyphicon-time"></i>
      </h4> 
-     {{!-- <a id="send-data-update" class="btn btn-secondary" href="recipes/edit/{{this._id}}">Edit</a>
-     <a id="send-data-delete" class="btn btn-secondary" href="/recipes/delete/{{this._id}}">Delete</a> --}}
     </div>
    
   {{/each}}
