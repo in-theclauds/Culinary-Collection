@@ -386,9 +386,11 @@ html, body {
 }
 
 .theTitle, h1{
-  font-size: 58px;
+  font-size: 67px;
   font-weight: 700;
-  // font-size: 7m;
+  border: black;
+  text-shadow: 3px 2px black;
+  font-family: 'Oswald', sans-serif;
 }
 
 
