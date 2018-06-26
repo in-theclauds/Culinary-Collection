@@ -167,29 +167,28 @@ color: white;
 } */
 
 .product-photo img:first-child {
-  // width: 50%;
-  // height: 30vh;
-  width: 37%;
-border-radius: 69%;
- height: 25em;
-  margin-top: -15%;
-  transform: translate(0, 0);
-  animation-name: small;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  margin-left: -5%;
+  width: auto;
+  /* border-radius: 69%; */
+  height: 16em;
+  margin-top: -19%;
+  /* transform: translate(0, 0); */
+  /* animation-name: small; */
+  /* animation-duration: 6s; */
+  /* animation-iteration-count: infinite; */
+  /* animation-timing-function: ease-in-out; */
+  margin-left: 2%;
+  align-content: baseline;
   
 }
 
 
-.theDescription, ol{
+.theDescription, .ordereD{
   display: flex;
   flex-flow: flex-start;
   justify-content: left;
   align-items: left;
-  margin-left: -60%;
-  margin-right: 20%;
+  margin-left: -49%;
+  /* margin-right: 20%; */
   margin-top: 88px !important;
   font-family: 'Montserrat', sans-serif;
 }
@@ -224,16 +223,15 @@ border-radius: 69%;
 
 
 
-.product__subtitle > ul , ul{
-  margin-top: 0%;
-  font-family: 'Montserrat', sans-serif;  
-  font-size: 1.5rem;
-  color: darkslategrey;
-  margin-bottom: 2rem;
-      margin-left: -17%;
-      margin-top: -25%;
-      /* margin-top: 46px; */
-  /* padding: 0 4rem; */
+.product__subtitle, .unOrdered {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: darkslategrey;
+    margin-bottom: 2rem;
+    /* margin-left: -11%; */
+    margin-top: -25%;
+    /* margin-top: 46px; */
+    /* padding: 0 4rem; */
 }
 
 .navbar-logo {
@@ -314,8 +312,11 @@ html, body {
 }
 
 #theRecipes, .theRecipes {
- padding-top: 7%;
- text-align: center;
+  padding-top: 6%;
+    padding-bottom: 3%;
+    align-content: center;
+    text-align: center;
+    padding-left: 3%;
 }
 
 .recipeCol, h2 {

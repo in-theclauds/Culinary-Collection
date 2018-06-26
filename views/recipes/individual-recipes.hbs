@@ -41,7 +41,7 @@
           {{!-- <div class="product__price"></div> --}}
           {{!-- <div class="product__price"> --}}
           <div class="product__subtitle">
-            <ul>
+            <ul class="unOrdered"> 
               <li>
                 {{#each recipe.ingredients}}
                  {{this}}
@@ -51,8 +51,8 @@
               </div>
 
             <div class="center theProduct__subtitle theDescription">
- 
-                                        <ol>
+                                        
+                                        <ol class="ordereD">
                                         {{#each recipe.instructions}}
                                         <li>{{this}}</li>
                                         {{/each}}
