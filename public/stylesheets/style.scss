@@ -36,6 +36,28 @@ body {
   }
 } */
 
+.generic-banner-content {
+  h1 {
+    line-height: 1.2em;
+    margin-bottom: 20px;
+    // br {
+    //   @include media-breakpoint-down (md) {
+    //     display: none;
+    //   }
+    // }
+  }
+  // p {
+  //   text-align:center;
+  //   font-size: 16px;
+  //   br {
+  //     @include media-breakpoint-down (md) {
+  //       display: none;
+  //     }
+  //   }
+  //  }
+}
+
+
 .container {
   position: relative;
   width: 100vw;
