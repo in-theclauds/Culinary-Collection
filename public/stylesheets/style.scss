@@ -468,6 +468,7 @@ html, body {
 }
 .input-group-addon .fa{
   font-size: 18px;
+  letter-spacing:3px;
       }.login-form {
         width: 340px;
           margin: 30px auto;
@@ -481,6 +482,7 @@ html, body {
             padding: 30px;
         }
         .login-form h2 {
+          letter-spacing:3px;
             margin: 0 0 15px;
         }
         .login-form .hint-text {
