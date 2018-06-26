@@ -36,43 +36,66 @@ body {
   }
 } */
 
-.generic-banner-content {
-  // background: url('../images/todd-quackenbush-700-unsplash copy.jpg') no-repeat center fixed;
-  // background: url('../images/recipesimg1.jpg') no-repeat center fixed;
-  // -webkit-background-size: cover;
-  // background-position: center;
-  // max-width: 100%;
-  // max-height: 87%;
+// .generic-banner-content {
+//   // background: url('../images/todd-quackenbush-700-unsplash copy.jpg') no-repeat center fixed;
+//   // background: url('../images/recipesimg1.jpg') no-repeat center fixed;
+//   // -webkit-background-size: cover;
+//   // background-position: center;
+//   // max-width: 100%;
+//   // max-height: 87%;
   
-  h1 {
-    line-height: 1.2em;
-    text-align:center;
-    margin-bottom: 20px;
-    // br {
-    //   @include media-breakpoint-down (md) {
-    //     display: none;
-    //   }
-    // }
-  }
-  // p {
-  //   text-align:center;
-  //   font-size: 16px;
-  //   br {
-  //     @include media-breakpoint-down (md) {
-  //       display: none;
-  //     }
-  //   }
-  //  }
+//   h1 {
+//     line-height: 1.2em;
+//     text-align:center;
+//     margin-bottom: 20px;
+//     // br {
+//     //   @include media-breakpoint-down (md) {
+//     //     display: none;
+//     //   }
+//     // }
+//   }
+//   // p {
+//   //   text-align:center;
+//   //   font-size: 16px;
+//   //   br {
+//   //     @include media-breakpoint-down (md) {
+//   //       display: none;
+//   //     }
+//   //   }
+//   //  }
+// }
+
+// .generic-banner-content{
+//   background: url('../images/recipesimg1.jpg') no-repeat center fixed;
+//   background-size: cover;
+//   display: block;
+//   width: 100%;
+//   height: 35%;
+// }
+
+
+body, html {
+  height: 100%;
+  margin: 0;
 }
 
-.generic-banner-content{
-  background: url('../images/recipesimg1.jpg') no-repeat center fixed;
-  background-size: cover;
-  display: block;
-  width: 100%;
-  height: 35%;
+.hero-image {
+background-image: url('../images/recipesimg1.jpg');
+height:80vh;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
 }
 
+.hero-text {
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+}
 
 .container {
   position: relative;
@@ -245,7 +268,7 @@ font-family: 'Oswald', sans-serif;
 html, body {
   // height: 100%;
   // width: 100%;
-  margin: 20;
+  // margin: 20;
   font-weight: 14px;
   font-family: 'Oswald', sans-serif;
   
