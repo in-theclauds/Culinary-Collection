@@ -39,10 +39,10 @@ body {
 .generic-banner-content {
   // background: url('../images/todd-quackenbush-700-unsplash copy.jpg') no-repeat center fixed;
   background: url('../images/recipesimg1.jpg') no-repeat center fixed;
-  -webkit-background-size: cover;
+  // -webkit-background-size: cover;
   background-position: center;
-  width: 100%;
-  height: 87%;
+  max-width: 100%;
+  max-height: 87%;
   
   h1 {
     line-height: 1.2em;
