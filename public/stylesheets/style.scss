@@ -66,7 +66,9 @@ body {
 }
 
 .generic-banner-content{
-  background: url('../images/recipesimg1.jpg');
+  background: url('../images/recipesimg1.jpg') no-repeat center fixed;
+  background-size: cover;
+  display: block;
   width: 100%;
   height: 35%;
 }
