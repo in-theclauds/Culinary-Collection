@@ -663,6 +663,9 @@ html, body {
 }
 
 .recipe-images {
+  img:hover {
+    transform: scale(1.1);
+}
   width: 75%;
   border-radius: 49%;
   height: 13em;
