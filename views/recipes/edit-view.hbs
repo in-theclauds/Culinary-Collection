@@ -10,7 +10,7 @@
 
  <div id="edit-recipe">
     <div class="landing-text">
-        <h1 class="edit">Edit recipe</h1>
+        <h1>Edit recipe</h1>
 
         <div class="edit-form">
         <form action="/recipes/update/{{recipeDetails._id}}" method="post">	
@@ -47,8 +47,10 @@
                 <input id="instructions" type="text" class="edit-control" name="editedInstructions" value="{{ recipeDetails.instructions }}">
             </div>
             <br>
+            <br>
             <div class="frm-group">
             <div class="inputs">
+                <br>
               <label for="recipeLevel">Level: </label>
               <select id=“level” name=“editedLevel” value="{{ recipe.level }}">
                     <option value=“Easy-Peasy”>Easy Peasy</option>
