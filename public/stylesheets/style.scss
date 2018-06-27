@@ -439,6 +439,11 @@ html, body {
       min-height: 38px;
       border-radius: 2px;
   }
+
+  .form-control, input{
+    font-size: 115%;
+  }
+  
   .login-btn {        
       font-size: 15px;
       font-weight: bold;
@@ -631,6 +636,7 @@ html, body {
       
       label {
         color: black;
+        font-size: 115%;
       }
 
 
@@ -747,7 +753,7 @@ html, body {
 }
 
   .edit-control{
-    width: 80%;
+    width: 96%;
     height: 30%;
   }
   .edit-form form {
@@ -760,7 +766,7 @@ html, body {
   }
   .edit-form h2 {
       margin: 0 0 15px;
-      color: black
+      color: white
   }
   .edit-form .hint-text {
   color:black;
@@ -817,6 +823,7 @@ html, body {
       
       label {
         color: black;
+        font-size: 115%;
       }
 
 
