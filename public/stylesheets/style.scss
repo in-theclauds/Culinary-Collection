@@ -73,6 +73,15 @@ body {
 //   height: 35%;
 // }
 
+.searchyBTN{
+  min-height: 23px;
+  border-radius: 73%;
+}
+
+.searchInput{
+  height: 33px;
+}
+
 .submitBTN:hover{
     left:4px;
     top:4px;
@@ -116,6 +125,7 @@ color: white;
 .recipeH1{
   // margin-top: -89%;
   font-size: 50px;
+  color: white;
     border: black;
     text-shadow: 3px 2px black;
     font-family: 'Oswald', sans-serif;
@@ -273,11 +283,13 @@ color: white;
   font-family: 'Oswald', sans-serif !important;
   color:#CDC9C5;
   font-size: 13px;
-
+  padding-top: 0px;
 }
 
 .navText:hover{
   font-size: 13px;
+  padding-bottom: 16px;
+  border-radius: 6%;
   font-family: 'Oswald', sans-serif;
     opacity: 0.5, lightslategrey;
 
@@ -776,7 +788,7 @@ html, body {
   }
   .edit-control, .btn {
       min-height: 38px;
-      border-radius: 73%;
+      border-radius: 2px;
   }
   .edit-btn {        
       font-size: 15px;
